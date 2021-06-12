@@ -18,7 +18,7 @@ driver.get('https://rankyourbrain.com/mental-math/mental-math-test-easy/countdow
 sleep(6) # ждем каунтдаун (можно по-другому, но мне так нравится, код пишу я, а не ты :>)
 try: # чтобы прога не вылетела
     while True: # ну ясно, пока можем - "решаем"
-        x = eval(driver.find_element_by_xpath('//span[@id="beforeAnswer"]').text[:-2]) # находим элемент в котором наш вопрос, получаем его текст без "=", решаем
+        x = int(eval(driver.find_element_by_xpath('//span[@id="beforeAnswer"]').text[:-2])) # находим элемент в котором наш вопрос, получаем его текст без "=", решаем
         # print(x) # ну если хотите побыть хацкерменами
         y = driver.find_element_by_xpath('//input[@id="answer"]').send_keys(x) # записываем в инпут (сайт сам жмет энтер)
 except: # оу 
